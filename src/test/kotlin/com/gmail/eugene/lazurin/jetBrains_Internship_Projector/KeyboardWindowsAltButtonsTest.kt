@@ -76,28 +76,49 @@ class KeyboardWindowsAltButtonsTest {
     //keyboards codes https://stackoverflow.com/questions/15313469/java-keyboard-keycodes-list
     @Test
     fun testWindowsSmile() = test(Keys.chord(Keys.ALT, Keys.NUMPAD1)) {
-        assertEquals(3, it.size)
+        assertEquals(5, it.size)
         checkEvent(it[0], KeyEvent.KEY_PRESSED, 18, KeyEvent.CHAR_UNDEFINED, KeyEvent.KEY_LOCATION_STANDARD, 0)
-        checkEvent(it[1], KeyEvent.KEY_TYPED, 97, KeyEvent.CHAR_UNDEFINED, KeyEvent.KEY_LOCATION_STANDARD, 0)
-        checkEvent(it[2], KeyEvent.KEY_RELEASED, 18, '☺',KeyEvent.KEY_LOCATION_LEFT, 0)
+
+        checkEvent(it[1], KeyEvent.KEY_PRESSED, 97, KeyEvent.CHAR_UNDEFINED, KeyEvent.KEY_LOCATION_STANDARD, 0)
+        checkEvent(it[2], KeyEvent.KEY_TYPED, 0, KeyEvent.CHAR_UNDEFINED, KeyEvent.KEY_LOCATION_STANDARD, 0)
+        checkEvent(it[3], KeyEvent.KEY_RELEASED, 97, KeyEvent.CHAR_UNDEFINED, KeyEvent.KEY_LOCATION_STANDARD, 0)
+
+        checkEvent(it[4], KeyEvent.KEY_RELEASED, 18, '☺',KeyEvent.KEY_LOCATION_LEFT, 0)
     }
 
     @Test
     fun testWindowsMarsSpear() = test(Keys.chord(Keys.ALT, Keys.NUMPAD1, Keys.NUMPAD1)) {
-        assertEquals(4, it.size)
+        assertEquals(8, it.size)
         checkEvent(it[0], KeyEvent.KEY_PRESSED, 18, KeyEvent.CHAR_UNDEFINED, KeyEvent.KEY_LOCATION_STANDARD, 0)
-        checkEvent(it[1], KeyEvent.KEY_TYPED, 97, KeyEvent.CHAR_UNDEFINED, KeyEvent.KEY_LOCATION_STANDARD, 0)
-        checkEvent(it[2], KeyEvent.KEY_TYPED, 97, KeyEvent.CHAR_UNDEFINED, KeyEvent.KEY_LOCATION_STANDARD, 0)
-        checkEvent(it[3], KeyEvent.KEY_RELEASED, 18, '♂', KeyEvent.KEY_LOCATION_LEFT, 0)
+
+        checkEvent(it[1], KeyEvent.KEY_PRESSED, 97, KeyEvent.CHAR_UNDEFINED, KeyEvent.KEY_LOCATION_STANDARD, 0)
+        checkEvent(it[2], KeyEvent.KEY_TYPED, 0, KeyEvent.CHAR_UNDEFINED, KeyEvent.KEY_LOCATION_STANDARD, 0)
+        checkEvent(it[3], KeyEvent.KEY_RELEASED, 97, KeyEvent.CHAR_UNDEFINED, KeyEvent.KEY_LOCATION_STANDARD, 0)
+
+        checkEvent(it[4], KeyEvent.KEY_PRESSED, 97, KeyEvent.CHAR_UNDEFINED, KeyEvent.KEY_LOCATION_STANDARD, 0)
+        checkEvent(it[5], KeyEvent.KEY_TYPED, 0, KeyEvent.CHAR_UNDEFINED, KeyEvent.KEY_LOCATION_STANDARD, 0)
+        checkEvent(it[6], KeyEvent.KEY_RELEASED, 97, KeyEvent.CHAR_UNDEFINED, KeyEvent.KEY_LOCATION_STANDARD, 0)
+
+        checkEvent(it[7], KeyEvent.KEY_RELEASED, 18, '♂', KeyEvent.KEY_LOCATION_LEFT, 0)
     }
 
     @Test
     fun testWindowsSquare() = test(Keys.chord(Keys.ALT, Keys.NUMPAD2, Keys.NUMPAD1, Keys.NUMPAD9)) {
-        assertEquals(5, it.size)
+        assertEquals(11, it.size)
         checkEvent(it[0], KeyEvent.KEY_PRESSED, 18, KeyEvent.CHAR_UNDEFINED, KeyEvent.KEY_LOCATION_STANDARD, 0)
-        checkEvent(it[1], KeyEvent.KEY_TYPED, 98, KeyEvent.CHAR_UNDEFINED, KeyEvent.KEY_LOCATION_STANDARD, 0)
-        checkEvent(it[2], KeyEvent.KEY_TYPED, 97, KeyEvent.CHAR_UNDEFINED, KeyEvent.KEY_LOCATION_STANDARD, 0)
-        checkEvent(it[3], KeyEvent.KEY_TYPED, 105, KeyEvent.CHAR_UNDEFINED, KeyEvent.KEY_LOCATION_STANDARD, 0)
-        checkEvent(it[4], KeyEvent.KEY_RELEASED, 18, '█', KeyEvent.KEY_LOCATION_STANDARD, 0)
+
+        checkEvent(it[1], KeyEvent.KEY_PRESSED, 98, KeyEvent.CHAR_UNDEFINED, KeyEvent.KEY_LOCATION_STANDARD, 0)
+        checkEvent(it[2], KeyEvent.KEY_TYPED, 0, KeyEvent.CHAR_UNDEFINED, KeyEvent.KEY_LOCATION_STANDARD, 0)
+        checkEvent(it[3], KeyEvent.KEY_RELEASED, 98, KeyEvent.CHAR_UNDEFINED, KeyEvent.KEY_LOCATION_STANDARD, 0)
+
+        checkEvent(it[4], KeyEvent.KEY_PRESSED, 97, KeyEvent.CHAR_UNDEFINED, KeyEvent.KEY_LOCATION_STANDARD, 0)
+        checkEvent(it[5], KeyEvent.KEY_TYPED, 0, KeyEvent.CHAR_UNDEFINED, KeyEvent.KEY_LOCATION_STANDARD, 0)
+        checkEvent(it[6], KeyEvent.KEY_RELEASED, 97, KeyEvent.CHAR_UNDEFINED, KeyEvent.KEY_LOCATION_STANDARD, 0)
+
+        checkEvent(it[7], KeyEvent.KEY_PRESSED, 105, KeyEvent.CHAR_UNDEFINED, KeyEvent.KEY_LOCATION_STANDARD, 0)
+        checkEvent(it[8], KeyEvent.KEY_TYPED, 0, KeyEvent.CHAR_UNDEFINED, KeyEvent.KEY_LOCATION_STANDARD, 0)
+        checkEvent(it[9], KeyEvent.KEY_RELEASED, 105, KeyEvent.CHAR_UNDEFINED, KeyEvent.KEY_LOCATION_STANDARD, 0)
+
+        checkEvent(it[10], KeyEvent.KEY_RELEASED, 18, '█', KeyEvent.KEY_LOCATION_STANDARD, 0)
     }
 }
